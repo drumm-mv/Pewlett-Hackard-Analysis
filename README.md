@@ -18,7 +18,7 @@ Below are four major points gathered from the two part analysis described above.
 - Currently PH only has 1550 eligible replacements through mentorship eligibility compared to the retiring 72458
 - The majority of retirees will be Senior Engineers and Senior Staff
 
-![image_name](Resources/retirements_by_department.png)
+![image_name](Resources/retiring_by_title.png)
 
 - There is a surprisingly small amount of "Managers" in the group of retirees
 
