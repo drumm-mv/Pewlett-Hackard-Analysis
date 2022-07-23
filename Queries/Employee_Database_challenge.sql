@@ -82,9 +82,9 @@ GROUP BY d.dept_name, de.dept_no
 ;
 
 -- Table showing employees eligible for mentorship counts by Department (mentorship_by_department.csv)
-SELECT count(de.emp_no) As "Retirement Count",
+SELECT count(de.emp_no) As "Eligible for Mentorship Count",
         d.dept_name
--- INTO retirements_by_department   
+INTO mentorship_by_department   
 FROM mentorship_eligibilty AS me
 INNER JOIN dept_emp AS de
 ON(me.emp_no=de.emp_no)
