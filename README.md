@@ -8,12 +8,8 @@ Using Postgres determine the number of retiring employees per title, and identif
 Below are four major points gathered from the two part analysis described above.
 - Nearly a third of PH's employees will be or are retirement age. 
   - Current Employees: 240124
-
-![image_name](Resources/Total_Current_Employees.png)
-
   - Retiring: 72458
-
-![image_name](Resources/Total_Retiring_Employees.png)
+![image_name](Resources/Total_Current_Employees.png) ![image_name](Resources/Total_Retiring_Employees.png)
 
 - Currently PH only has 1550 eligible replacements through mentorship eligibility compared to the retiring 72458
 - The majority of retirees will be Senior Engineers and Senior Staff
