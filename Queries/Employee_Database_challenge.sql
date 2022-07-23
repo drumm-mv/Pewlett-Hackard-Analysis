@@ -49,3 +49,47 @@ AND (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no;
 
 
+-- Deliverable 3 - Summary
+
+-- Table to provide count of employees eligible for mentorship by title (mentorship_per_titles.csv)
+SELECT  count(me.emp_no),
+        me.title
+INTO mentorship_per_titles
+FROM mentorship_eligibilty AS me
+GROUP BY me.title
+ORDER BY count DESC;
+
+-- Table showing what percentage of retirees for each title (retiring_percent_by_titles.csv)
+SELECT  rt.title,
+        rt.count,
+        100.0 * rt.count / sum(rt.count) OVER() AS percentage
+INTO retiring_percent_by_titles
+FROM retiring_titles AS rt
+GROUP BY rt.title, rt.count
+ORDER BY percentage DESC;
+
+-- Table showing retirement counts by Department (retirements_by_department.csv)
+SELECT count(de.emp_no) As "Retirement Count",
+        d.dept_name
+INTO retirements_by_department   
+FROM retirement_titles AS rt
+INNER JOIN dept_emp AS de
+ON(rt.emp_no=de.emp_no)
+INNER JOIN departments AS d
+ON(de.dept_no=d.dept_no)
+WHERE de.to_date = '9999-01-01'
+GROUP BY d.dept_name, de.dept_no
+;
+
+-- Table showing employees eligible for mentorship counts by Department (mentorship_by_department.csv)
+SELECT count(de.emp_no) As "Retirement Count",
+        d.dept_name
+-- INTO retirements_by_department   
+FROM mentorship_eligibilty AS me
+INNER JOIN dept_emp AS de
+ON(me.emp_no=de.emp_no)
+INNER JOIN departments AS d
+ON(de.dept_no=d.dept_no)
+WHERE de.to_date = '9999-01-01'
+GROUP BY d.dept_name, de.dept_no
+;
